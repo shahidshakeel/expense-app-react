@@ -14,7 +14,7 @@ export default function AppView() {
 
   const fetchExpenseSummary = async () => {
     try {
-      const response = await fetch('http://localhost:3000/expenses/summary');
+      const response = await fetch(`${process.env.API_SERVER}/expenses/summary`);
       if (!response.ok) {
         throw new Error('Failed to fetch expense data');
       }

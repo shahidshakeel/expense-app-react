@@ -25,7 +25,7 @@ export const fetchEmployees = async () => {
 };
 
 export const fetchExpenses = async () => {
-  const response = await fetch('http://localhost:3000/getAllUserExpenses');
+  const response = await fetch(`${process.env.API_SERVER}/getAllUserExpenses`);
   if (!response.ok) {
     throw new Error('Failed to fetch expenses');
   }

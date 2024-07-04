@@ -50,7 +50,7 @@ const DetailedExpenses = () => {
   const handleApproveReject = async () => {
     const newStatus = !data.isApproved;
     // console.log(`Approve/Reject expenses for user ${userId} in month ${month}:`, newStatus);
-    const endpoint = `http://localhost:3000/user/${userId}/${
+    const endpoint = `${process.env.API_SERVER}/user/${userId}/${
       newStatus ? 'approve' : 'reject'
     }/${month}`;
 
@@ -235,7 +235,7 @@ const DetailedExpenses = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/user/${userId}/month/${month}`)
+      .get(`${process.env.API_SERVER}/user/${userId}/month/${month}`)
       .then((response) => {
         setData(response.data);
         setLoading(false);
