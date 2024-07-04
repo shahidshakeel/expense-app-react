@@ -14,7 +14,7 @@ export default function AppView() {
 
   const fetchExpenseSummary = async () => {
     try {
-      const response = await fetch(`${process.env.API_SERVER}/expenses/summary`);
+      const response = await fetch(`https://walrus-app-6utnt.ondigitalocean.app/expenses/summary`);
       if (!response.ok) {
         throw new Error('Failed to fetch expense data');
       }

@@ -25,7 +25,7 @@ export const fetchEmployees = async () => {
 };
 
 export const fetchExpenses = async () => {
-  const response = await fetch(`${process.env.API_SERVER}/getAllUserExpenses`);
+  const response = await fetch(`https://walrus-app-6utnt.ondigitalocean.app/getAllUserExpenses`);
   if (!response.ok) {
     throw new Error('Failed to fetch expenses');
   }

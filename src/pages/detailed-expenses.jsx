@@ -50,7 +50,7 @@ const DetailedExpenses = () => {
   const handleApproveReject = async () => {
     const newStatus = !data.isApproved;
     // console.log(`Approve/Reject expenses for user ${userId} in month ${month}:`, newStatus);
-    const endpoint = `${process.env.API_SERVER}/user/${userId}/${
+    const endpoint = `https://walrus-app-6utnt.ondigitalocean.app/user/${userId}/${
       newStatus ? 'approve' : 'reject'
     }/${month}`;
 
@@ -235,7 +235,7 @@ const DetailedExpenses = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.API_SERVER}/user/${userId}/month/${month}`)
+      .get(`https://walrus-app-6utnt.ondigitalocean.app/user/${userId}/month/${month}`)
       .then((response) => {
         setData(response.data);
         setLoading(false);
